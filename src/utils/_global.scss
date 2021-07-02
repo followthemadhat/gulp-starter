@@ -1,0 +1,43 @@
+/* Global Project Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  background-color: #fff;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.4;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  align-self: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all .25s ease;
+}
