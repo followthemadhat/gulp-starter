@@ -64,7 +64,7 @@ function styles() {
     .pipe(sourcemaps.init())
 		.pipe(sassglob())
 		.pipe(sass())
-		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
+		.pipe(autoprefixer())
 		.pipe(cleancss({ level: { 1: { specialComments: 0 } }, /* format: 'beautify' */ }))
     .pipe(sourcemaps.write())
 		.pipe(rename('main.min.css'))
@@ -130,6 +130,6 @@ exports.styles  = styles
 exports.images  = images
 exports.nunjucks = nunjucks
 exports.deploy  = deploy
-exports.assets  = series(scripts, styles, images)
+exports.assets  = series(scripts, styles)
 exports.build   = series(cleandist, scripts, styles, nunjucks, build, images)
-exports.default = series(scripts, styles, images, nunjucks, parallel(browsersync, startwatch))
+exports.default = series(scripts, styles, nunjucks, parallel(browsersync, startwatch))
